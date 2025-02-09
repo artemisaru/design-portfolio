@@ -106,23 +106,21 @@ p {
 
 .scroller[data-direction="right"] {
     --_animation-direction: reverse;
-  }
-  
-  .scroller[data-direction="left"] {
-    --_animation-direction: forwards;
-  }
-  
-  .scroller[data-speed="fast"] {
-    --_animation-duration: 20s;
-  }
-  
-  .scroller[data-speed="slow"] {
-    --_animation-duration: 60s;
-  }
-
-.container {
-    z-index: 99;
 }
+  
+.scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+}
+  
+.scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+}
+  
+.scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+}
+
+
 
 .container {
     display: flex;
@@ -132,6 +130,8 @@ p {
     gap: 32px;
     padding: 40px;
     max-width: 600px;
+    z-index: 99;
+    transition: all cubic-bezier(0.05, 0.2, 0.1, 1) .8s;
 }
 
 .logo {
@@ -149,6 +149,7 @@ h1 {
     font-weight: 500;
     line-height: 60px;
     letter-spacing: 0px;
+    text-align: center;
 }
 
 .logo p {
@@ -158,6 +159,7 @@ h1 {
     font-weight: 400;
     line-height: 27px;
     letter-spacing: 3.5px;
+    text-align: center;
 }
 
 .message {
@@ -166,10 +168,12 @@ h1 {
     font-weight: 500;
     line-height: 27px;
     letter-spacing: 0.4px;
+    text-align: center;
 }
 
 .contact {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -226,5 +230,24 @@ h1 {
     }
     100% {
         transform: translate3d(0, 8%, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        scale: .9;
+        padding: 16px;
+    }
+}
+@media (max-width: 425px) {
+    .container {
+        scale: .8;
+        padding: 16px;
+    }
+}
+@media (max-width: 375px) {
+    .container {
+        scale: .7;
+        padding: 16px;
     }
 }
